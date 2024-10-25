@@ -3,12 +3,31 @@
 <?import javafx.scene.control.ButtonType?>
 <?import javafx.scene.control.DialogPane?>
 <?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.VBox?>
+
 <DialogPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
             fx:controller="org.jabref.gui.libraryproperties.LibraryPropertiesView"
             prefHeight="400.0" prefWidth="600.0">
+
+    <!-- Define the content of the dialog -->
     <content>
-        <TabPane fx:id="tabPane" tabClosingPolicy="UNAVAILABLE"/>
+        <VBox spacing="10">
+            <!-- TabPane for other tabs -->
+            <TabPane fx:id="tabPane" tabClosingPolicy="UNAVAILABLE"/>
+
+            <!-- File Path Input Section -->
+            <VBox spacing="5">
+                <Label text="File Path:"/>
+                <TextField fx:id="filePathField"/>
+            </VBox>
+        </VBox>
     </content>
-    <ButtonType fx:id="saveButton" text="%Apply" buttonData="OK_DONE"/>
-    <ButtonType fx:constant="CANCEL"/>
+
+    <!-- Define buttons for the dialog -->
+    <buttonTypes>
+        <ButtonType fx:id="saveButton" text="%Apply" buttonData="OK_DONE"/>
+        <ButtonType fx:constant="CANCEL"/>
+    </buttonTypes>
 </DialogPane>
